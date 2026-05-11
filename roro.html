@@ -3,31 +3,90 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>بحبك يا رورو</title>
+  <title>رورو ❤</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Amiri:wght@700&family=Reem+Kufi:wght@700&display=swap" rel="stylesheet">
   <style>
-    body {
+    * {
       margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+    body {
       height: 100vh;
       display: flex;
       justify-content: center;
       align-items: center;
-      background: linear-gradient(135deg, #ff9a9e 0%, #fecfef 100%);
-      font-family: 'Cairo', sans-serif;
+      background: #0f0c29;
+      background: linear-gradient(to right, #24243e, #302b63, #0f0c29);
+      overflow: hidden;
+      font-family: 'Reem Kufi', sans-serif;
+    }
+    .container {
+      text-align: center;
+      position: relative;
+      z-index: 2;
     }
     h1 {
-      font-size: 60px;
-      color: #d6336c;
-      text-shadow: 2px 2px 4px rgba(0,0,0,0.2);
-      animation: pulse 2s infinite;
+      font-family: 'Amiri', serif;
+      font-size: 80px;
+      color: #fff;
+      text-shadow: 0 0 10px #ff006e, 0 0 20px #ff006e, 0 0 40px #ff006e;
+      animation: glow 2s ease-in-out infinite alternate;
     }
-    @keyframes pulse {
-      0% { transform: scale(1); }
-      50% { transform: scale(1.1); }
-      100% { transform: scale(1); }
+    .heart {
+      font-size: 50px;
+      animation: beat 1s infinite;
+      display: inline-block;
+    }
+    @keyframes glow {
+      from { text-shadow: 0 0 10px #ff006e, 0 0 20px #ff006e, 0 0 30px #ff006e; }
+      to { text-shadow: 0 0 20px #ff006e, 0 0 30px #ff006e, 0 0 50px #ff006e, 0 0 60px #ff006e; }
+    }
+    @keyframes beat {
+      0%, 100% { transform: scale(1); }
+      50% { transform: scale(1.3); }
+    }
+    .stars {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      pointer-events: none;
+    }
+    .star {
+      position: absolute;
+      width: 2px;
+      height: 2px;
+      background: white;
+      border-radius: 50%;
+      animation: twinkle 3s infinite;
+    }
+    @keyframes twinkle {
+      0%, 100% { opacity: 0; }
+      50% { opacity: 1; }
     }
   </style>
 </head>
 <body>
-  <h1>بحبك يا رورو ❤</h1>
+  <div class="stars" id="stars"></div>
+  <div class="container">
+    <h1>بحبك يا رورو</h1>
+    <div class="heart">❤</div>
+  </div>
+
+  <script>
+    const starsContainer = document.getElementById('stars');
+    for (let i = 0; i < 100; i++) {
+      const star = document.createElement('div');
+      star.className = 'star';
+      star.style.left = Math.random() * 100 + '%';
+      star.style.top = Math.random() * 100 + '%';
+      star.style.animationDelay = Math.random() * 3 + 's';
+      starsContainer.appendChild(star);
+    }
+  </script>
 </body>
 </html>
