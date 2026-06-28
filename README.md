@@ -3,12 +3,12 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>روّرو 👑</title>
+<title>بحبك يا رورو 💖</title>
 <style>
 body {
   margin: 0;
   height: 100vh;
-  background: radial-gradient(circle at center, #000000, #0a0a0a, #1a1a1a);
+  background: radial-gradient(circle at center, #000, #111, #222);
   display: flex;
   justify-content: center;
   align-items: center;
@@ -16,30 +16,36 @@ body {
   font-family: 'Cairo', sans-serif;
 }
 h1 {
-  font-size: 80px;
-  color: #ff00cc;
-  text-shadow: 0 0 20px #ff00cc, 0 0 40px #ff66ff, 0 0 80px #ff99ff;
-  animation: glow 3s infinite alternate, move 6s infinite ease-in-out;
+  font-size: 70px;
+  color: #ff66cc;
+  text-shadow: 0 0 20px #ff66cc, 0 0 40px #ff99ff, 0 0 80px #ffccff;
+  animation: glow 3s infinite alternate;
 }
 @keyframes glow {
-  0% { text-shadow: 0 0 10px #ff00cc, 0 0 20px #ff66ff; }
-  100% { text-shadow: 0 0 40px #ff00cc, 0 0 80px #ff99ff; }
+  0% { text-shadow: 0 0 10px #ff66cc; }
+  100% { text-shadow: 0 0 50px #ff99ff; }
 }
-@keyframes move {
-  0% { transform: translateY(0); }
-  50% { transform: translateY(-20px); }
-  100% { transform: translateY(0); }
+.heart {
+  position: absolute;
+  font-size: 30px;
+  color: #ff3399;
+  animation: float 6s infinite ease-in-out;
+}
+@keyframes float {
+  0% { transform: translateY(0); opacity: 1; }
+  100% { transform: translateY(-100vh); opacity: 0; }
 }
 </style>
 </head>
 <body>
-<h1>روّرو 👑</h1>
+<h1>بحبك يا رورو 💖</h1>
 
-<!-- موسيقى خلفية -->
-<audio autoplay loop>
-  <source src="https://www.soundhelix.com/examples/mp3/SoundHelix-Song-1.mp3" type="audio/mpeg">
-  متصفحك لا يدعم تشغيل الصوت.
-</audio>
+<!-- قلوب متحركة -->
+<div class="heart" style="left:10%; animation-delay:0s;">💞</div>
+<div class="heart" style="left:30%; animation-delay:2s;">💖</div>
+<div class="heart" style="left:50%; animation-delay:4s;">💘</div>
+<div class="heart" style="left:70%; animation-delay:1s;">💓</div>
+<div class="heart" style="left:90%; animation-delay:3s;">💗</div>
 
 </body>
 </html>
